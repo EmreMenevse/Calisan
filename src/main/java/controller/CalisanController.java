@@ -25,12 +25,12 @@ public class CalisanController {
     }
 
 
-   /* @GetMapping("/all")
+    @GetMapping("/all")
     public ResponseEntity<List<Calisan>> getAllCalisan() {
         List<Calisan> allCalisan = calisanService.findAllCalisan();
         return new ResponseEntity<List<Calisan>>(allCalisan, HttpStatus.OK);
     }
-    */
+
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public String get(ModelMap modelMap){
