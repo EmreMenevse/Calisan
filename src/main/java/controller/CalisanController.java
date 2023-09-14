@@ -4,7 +4,6 @@ import entity.Calisan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import service.CalisanService;
@@ -32,11 +31,6 @@ public class CalisanController {
     }
 
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
-    public String get(ModelMap modelMap){
-        modelMap.addAttribute("Message", "Hello World!");
-        return "greeting";
-    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Calisan> getCalisanId(@PathVariable("id") Long id){
