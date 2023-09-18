@@ -1,9 +1,6 @@
 package entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,21 +9,17 @@ import org.springframework.data.annotation.Id;
 
     @Data
     @Entity
-    @Getter
-    @Setter
-    @ToString
-    @Table(name="system.tb_mkuCalisanList")
+    @Table(name="system.tb_mkuCalisanList1")
     public class Calisan {
 
         @Id
+        @Column(name="IdNo")
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Long IdNo ;
         private String Ad;
         private String Soyad;
         private String Unvan;
-        private String SICIL_NO;
-        private String BANKAYABASLAMATARIHI;
-        private String CALISMADURUM;
+        private int SICIL_NO;
 
 
 
@@ -54,22 +47,11 @@ import org.springframework.data.annotation.Id;
         public void setUnvan(String unvan) {
             Unvan = unvan;
         }
-        public String getSICIL_NO() {
+        public int getSICIL_NO() {
             return SICIL_NO;
         }
-        public void setSICIL_NO(String sICIL_NO) {
+        public void setSICIL_NO(int sICIL_NO) {
             SICIL_NO = sICIL_NO;
         }
-        public String getBANKAYABASLAMATARIHI() {
-            return BANKAYABASLAMATARIHI;
-        }
-        public void setBANKAYABASLAMATARIHI(String bANKAYABASLAMATARIHI) {
-            BANKAYABASLAMATARIHI = bANKAYABASLAMATARIHI;
-        }
-        public String getCALISMADURUM() {
-            return CALISMADURUM;
-        }
-        public void setCALISMADURUM(String cALISMADURUM) {
-            CALISMADURUM = cALISMADURUM;
-        }
+
 }
